@@ -1,26 +1,21 @@
-import {
-  BrowserRouter as router,
-  Route,
-  Routes,
-  Router,
-} from "react-router-dom"
-import Home from "./pages/Home.js"
-import Find_duo from "./pages/Find_duo.js"
-import User_search from "./pages/User_search.js"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Home from "./pages/home.js"
+import FindDuo from "./pages/find_duo.js"
+import UserSearch from "./pages/user_search.js"
 import Header from "./components/Header.js"
 import Footer from "./components/Footer.js"
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Find_duo" element={<Find_duo />} />
-        <Route path="/User_search" element={<User_search />} />
+        <Route path="/find_duo" element={<FindDuo />} />
+        <Route path="/user_search" element={<UserSearch />} />
       </Routes>
       <Footer />
-    </Router>
+    </BrowserRouter>
   )
 }
 

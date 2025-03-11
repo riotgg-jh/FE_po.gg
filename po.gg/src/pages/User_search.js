@@ -1,11 +1,11 @@
-import "./../styles/User_search.css";
+import "./../styles/user_search.css";
 
-function User_search() {
+function user_search() {
   return (
-    <div className="Usersearch-container">
+    <div className="usersearch-container">
       <h1>유저조회 화면입니다.</h1>
     </div>
   );
 }
 
-export default User_search;
+export default user_search;

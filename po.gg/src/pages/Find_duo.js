@@ -1,11 +1,11 @@
-import "./../styles/Find_duo.css"
+import "./../styles/find_duo.css"
 
-function Find_duo() {
+function find_duo() {
   return (
-    <div className="Findduo-container">
+    <div className="findduo-container">
       <h1>듀오찾기 화면입니다.</h1>
     </div>
   )
 }
 
-export default Find_duo
+export default find_duo
