@@ -1,4 +1,51 @@
+body {
+  background-color: #f29c50e0;
+}
+
 .home-container {
-  text-align: center;
-  color: #007bff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 180px;
+  padding-bottom: 250px;
+}
+
+.home-logo {
+  width: 450px; /* 로고 크기 조정 */
+  margin-bottom: 5px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 10px;
+  width: 600px; /* 검색 바 너비 */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.region-select {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 10px;
+  outline: none;
+}
+
+.search-input {
+  flex-grow: 1;
+  border: none;
+  font-size: 16px;
+  padding: 5px 10px;
+  outline: none;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
 }

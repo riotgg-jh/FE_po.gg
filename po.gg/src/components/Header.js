@@ -1,13 +1,34 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
+import Container from "react-bootstrap/Container"
+import Nav from "react-bootstrap/Nav"
+import Navbar from "react-bootstrap/Navbar"
+import NavDropdown from "react-bootstrap/NavDropdown"
+import "../styles/Header.css"
 
 function Header() {
   return (
-    <nav>
-      <Link to="/">Home</Link> |  
-      <Link to="/find_duo">Find Duo</Link> |  
-      <Link to="/user_search">User Search</Link>
-    </nav>
-  );
+    <Navbar expand="lg" className="custom-navbar">
+      <Container>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="/">
+              홈
+            </Nav.Link>
+            <Nav.Link as={Link} to="/find_duo">
+              듀오찾기
+            </Nav.Link>
+            <Nav.Link as={Link} to="/user_search">
+              유저조회
+            </Nav.Link>
+            <Nav.Link as={Link} to="/user_search">
+              커뮤니티
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  )
 }
 
-export default Header;
+export default Header
