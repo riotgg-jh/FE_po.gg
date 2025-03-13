@@ -1,4 +1,154 @@
 .findduo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.findduo-title h1 {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 900;
+  text-align: left;
+  color: #000000;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 15px;
+}
+
+/* 네비게이션 바 전체 */
+.findduo-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 업데이트 버튼 */
+.update-btn {
+  background-color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.update-btn .icon-img {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px; /* ✅ 아이콘 오른쪽에 여백 추가 */
+}
+
+/* 필터 컨테이너 */
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 필터 드롭다운 */
+.filter-dropdown {
+  background-color: #2e2e2e;
+  border: 2px solid #4f4f4f;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* 아이콘 버튼 그룹 (전체 박스) */
+.filter-icons {
+  display: flex;
+  border: 1px solid #777; /* ✅ 전체 테두리 추가 */
+  border-radius: 5px; /* ✅ 둥근 테두리 */
+  overflow: hidden; /* ✅ 내부 아이콘들이 테두리 안에 들어가도록 설정 */
+}
+
+/* 개별 아이콘 버튼 */
+.icon-btn {
+  background-color: #3b3b3b;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 47px;
+  height: 47px;
+  border-right: 1px solid #777; /* ✅ 버튼 사이 경계선 추가 */
+}
+
+/* 마지막 아이콘 버튼은 경계선 제거 */
+.icon-btn:last-child {
+  border-right: none;
+}
+
+/* 아이콘 크기 조절 */
+.icon-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* 버튼 클릭 또는 활성화 시 색 변경 */
+.icon-btn:active,
+.icon-btn:hover {
+  background-color: #353535; /* ✅ 버튼 활성화 시 색 변경 */
+}
+
+/* 글쓰기 버튼 */
+.write-btn {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 14px 50px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* -----------------------------------------------------------*/
+
+/* 듀오 카드 리스트 (그리드 정렬) */
+.duo-card-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* ✅ 반응형 그리드 */
+  gap: 15px; /* ✅ 카드 사이 여백 */
+  margin-top: 20px;
+}
+
+/* 개별 카드 스타일 */
+.duo-card {
+  background-color: #373737; /* ✅ 카드 배경색 */
+  border: 1px solid #535353; /* ✅ 카드 테두리 */
+  border-radius: 8px;
+  height: 180px; /* ✅ 카드 기본 높이 */
+}
+
+/* -----------------------------------------------------------*/
+/* 더보기 버튼 스타일 */
+.see-more-container {
   text-align: center;
-  color: #28a745;
+  font-size: 17px;
+  font-weight: 700;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-decoration: underline;
+  cursor: pointer; /* ✅ 클릭 가능하도록 설정 */
+}
+
+.see-more-container:hover {
+  color: #ff5100; /* ✅ 호버 시 색상 변경 */
+  text-decoration-color: #ff5100;
 }
