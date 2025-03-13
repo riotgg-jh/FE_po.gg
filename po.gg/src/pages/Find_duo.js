@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import ReactDOM from "react-dom";
 import "./../styles/find_duo.css";
-import WriteModal from "./../components/WriteModal.js"; // ✅ 오타 수정
+import WriteModal from "./../components/WriteModal.js"; // ✅ WriteModal import
 
 import anything_icon from "./../assets/position/anything.png";
 import top_icon from "./../assets/position/Top_icon.png";
@@ -14,12 +15,21 @@ import reloadIcon from "./../assets/icons/reload.png";
 function FindDuo() {
   const [visibleCards, setVisibleCards] = useState(12);
   const [totalCards, setTotalCards] = useState(18);
-  const [isModalOpen, setIsModalOpen] = useState(false); // ✅ 팝업 상태 추가
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleSeeMore = () => {
     setVisibleCards((prev) => prev + 12);
     setTotalCards((prev) => prev + 12);
   };
+
+  const positionImages = [
+    anything_icon,
+    top_icon,
+    mid_icon,
+    jungle_icon,
+    bottom_icon,
+    support_icon,
+  ];
 
   return (
     <div className="findduo-container">
@@ -28,7 +38,7 @@ function FindDuo() {
         <h1>듀오찾기</h1>
       </div>
 
-      {/* 네비게이션 바 */}
+      {/* 네비게이션 바 (필터 + 포지션 아이콘 선택 복구) */}
       <div className="findduo-navbar">
         <div className="left-section">
           <button className="update-btn">
@@ -57,31 +67,19 @@ function FindDuo() {
               <option>그랜드마스터</option>
               <option>챌린저</option>
             </select>
+          </div>
 
-            <div className="filter-icons">
-              <button className="icon-btn">
-                <img src={anything_icon} alt="상관없음" />
+          {/* ✅ 포지션 아이콘 선택 복구 */}
+          <div className="filter-icons">
+            {positionImages.map((image, index) => (
+              <button key={index} className="icon-btn">
+                <img src={image} alt={`포지션 ${index}`} />
               </button>
-              <button className="icon-btn">
-                <img src={top_icon} alt="탑" />
-              </button>
-              <button className="icon-btn">
-                <img src={mid_icon} alt="미드" />
-              </button>
-              <button className="icon-btn">
-                <img src={jungle_icon} alt="정글" />
-              </button>
-              <button className="icon-btn">
-                <img src={bottom_icon} alt="바텀" />
-              </button>
-              <button className="icon-btn">
-                <img src={support_icon} alt="서폿" />
-              </button>
-            </div>
+            ))}
           </div>
         </div>
 
-        {/* 오른쪽: 글쓰기 버튼 (onClick 추가) */}
+        {/* 글쓰기 버튼 (모달 열기) */}
         <button className="write-btn" onClick={() => setIsModalOpen(true)}>
           글쓰기
         </button>
@@ -100,8 +98,12 @@ function FindDuo() {
         <p className="see-more-text">더보기</p>
       </div>
 
-      {/* 팝업 컴포넌트 */}
-      <WriteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      {/* ✅ 팝업을 React Portal로 유지 */}
+      {isModalOpen &&
+        ReactDOM.createPortal(
+          <WriteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} positionImages={positionImages} />,
+          document.body
+        )}
     </div>
   );
 }
