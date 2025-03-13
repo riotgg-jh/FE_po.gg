@@ -1,0 +1,11 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+/* 메인 컨텐츠 영역 */
+.main-content {
+  flex-grow: 1; 
+  height: 100%;
+}

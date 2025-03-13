@@ -1,0 +1,163 @@
+/* ✅ 모달 배경 (화면 전체 덮기) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* ✅ 모달 컨테이너 */
+.modal-container {
+  background: #222;
+  width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 닫기 버튼 */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ✅ 탭 버튼 */
+.modal-tabs {
+  display: flex;
+  border-bottom: 2px solid #ff6600;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.tab-button {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  color: #888;
+  cursor: pointer;
+}
+
+.tab-button.active {
+  font-weight: bold;
+  color: #ff6600;
+  border-bottom: 2px solid #ff6600;
+}
+
+/* ✅ 모달 내부 가로 정렬 */
+.modal-body {
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+}
+
+/* ✅ 왼쪽: 게임 모드 선택 (사이드바) */
+.modal-sidebar {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-btn {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sidebar-btn.active {
+  color: #ff6600;
+  font-weight: bold;
+}
+
+/* ✅ 오른쪽: 입력 필드 및 포지션 선택 */
+.modal-main {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ✅ 소환사명 입력 */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+
+/* ✅ 포지션 선택 */
+.position-selector p {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.positions {
+  display: flex;
+  gap: 5px;
+}
+
+.position-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background: #444;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.position-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.position-btn.selected {
+  background: #ff6600;
+}
+
+/* ✅ 내용 입력 */
+.description-field {
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+}
+
+/* ✅ 등록 버튼 */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #ff6600;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}

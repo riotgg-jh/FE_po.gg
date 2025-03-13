@@ -1,8 +1,11 @@
+/* Footer 스타일 */
 .footer {
-  background-color:  #519ac6
-  ;
+  background-color: #519ac6;
   text-align: center;
-  font-family: "Noto Sans KR" sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   font-weight: bold;
   padding: 30px;
+  height: 100px;
+  width: 100%;
+  position: relative;
 }

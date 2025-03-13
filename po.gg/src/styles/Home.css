@@ -7,13 +7,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 180px;
-  padding-bottom: 250px;
+  padding-top: 200px;
 }
 
 .home-logo {
   width: 450px; /* 로고 크기 조정 */
-  margin-bottom: 5px;
+  margin-bottom: 80px;
 }
 
 .search-container {
