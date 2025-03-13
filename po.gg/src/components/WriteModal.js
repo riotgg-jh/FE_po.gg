@@ -40,7 +40,6 @@ function WriteModal({ isOpen, onClose, positionImages = [] }) {
 
           {/* 오른쪽: 입력 및 선택 필드 */}
           <div className="modal-main">
-            {/* ✅ 소환사명 입력란 */}
             <input type="text" className="input-field" placeholder="소환사명 입력" />
 
             {/* ✅ 포지션 선택 박스 */}
@@ -59,7 +58,6 @@ function WriteModal({ isOpen, onClose, positionImages = [] }) {
               </div>
             </div>
 
-            {/* ✅ 내용 입력란 */}
             <textarea className="description-field" placeholder="내용 입력 (80자 이내)" maxLength={80}></textarea>
             <button className="submit-btn">등록하기</button>
           </div>

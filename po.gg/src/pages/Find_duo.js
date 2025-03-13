@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "./../styles/find_duo.css";
-import WriteModal from "./../components/WriteModal.js";
+import WriteModal from "./../components/WriteModal.js"; // ✅ WriteModal import
 
 import anything_icon from "./../assets/position/anything.png";
 import top_icon from "./../assets/position/Top_icon.png";
@@ -38,7 +38,7 @@ function FindDuo() {
         <h1>듀오찾기</h1>
       </div>
 
-      {/* 네비게이션 바 */}
+      {/* 네비게이션 바 (필터 + 포지션 아이콘 선택 복구) */}
       <div className="findduo-navbar">
         <div className="left-section">
           <button className="update-btn">
@@ -68,6 +68,15 @@ function FindDuo() {
               <option>챌린저</option>
             </select>
           </div>
+
+          {/* ✅ 포지션 아이콘 선택 복구 */}
+          <div className="filter-icons">
+            {positionImages.map((image, index) => (
+              <button key={index} className="icon-btn">
+                <img src={image} alt={`포지션 ${index}`} />
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* 글쓰기 버튼 (모달 열기) */}
@@ -89,7 +98,7 @@ function FindDuo() {
         <p className="see-more-text">더보기</p>
       </div>
 
-      {/* ✅ React Portal을 사용하여 팝업이 `document.body`에 추가됨 */}
+      {/* ✅ 팝업을 React Portal로 유지 */}
       {isModalOpen &&
         ReactDOM.createPortal(
           <WriteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} positionImages={positionImages} />,
