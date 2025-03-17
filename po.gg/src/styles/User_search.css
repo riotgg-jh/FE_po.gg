@@ -1,4 +1,349 @@
-.usersearch-container {
-  text-align: center;
-  color: #ffc107;
+/* 📌 전체 컨테이너 */
+.user-search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  max-width: none;
+}
+
+/* 🔍 검색 바 컨테이너 */
+.search-bar-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 20px; /* 🔼 위쪽 여유 공간 추가 */
+}
+
+/* 🏆 프로필 전체 컨테이너 */
+.user-profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e2a3a;
+  color: white;
+  padding: 30px;
+  border-radius: 0 0 15px 15px;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* 왼쪽 프로필 */
+.profile-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-icon {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+}
+
+.profile-info h2 {
+  font-weight: 900;
+  font-size: 24px;
+  margin: 0;
+}
+
+.profile-level {
+  font-size: 16px;
+  font-weight: bold;
+  color: #f0c040;
+}
+
+.refresh-button {
+  margin-top: 5px;
+  background-color: #444;
+  border: none;
+  color: white;
+  padding: 15px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 16px;
+}
+
+/* 🏅 오른쪽 랭크 정보 */
+.profile-rank {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 370px;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* 🏆 큐 타입 선택 버튼 */
+.queue-select {
+  display: flex;
+  gap: 30px;
+}
+
+.queue-btn {
+  background: none;
+  border: none;
+  color: #888;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.queue-btn.active {
+  color: white;
+  border-bottom: 2px solid #f0c040;
+}
+
+/* 🏅 랭크 상세 정보 */
+.rank-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 15px;
+}
+
+/* 🏆 티어 아이콘 */
+.rank-icon {
+  width: 120px;
+  height: 120px;
+  display: block;
+  margin: auto;
+}
+
+/* 🏅 랭크 정보 */
+.rank-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+}
+
+.rank-tier {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.rank-lp {
+  font-size: 16px;
+  font-weight: bold;
+  color: #f0c040;
+  margin-bottom: 0px;
+}
+
+.rank-winrate {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* ---------------------------------------- 매치카드 ---------------------------------------------*/
+.user-content {
+  width: 100%;
+  max-width: 1300px;
+  margin-top: 15px;
+}
+
+.match-history {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%; /* 부모 컨테이너 크기를 100%로 설정 */
+  max-width: none; /* 부모 컨테이너 최대 폭 제한 해제 */
+}
+
+.match-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: none; /* 최대 너비 제한 해제 */
+  background-color: #d1e7ff; /* 기본 승리 색 */
+}
+
+.match-card.lose {
+  background-color: #ffd1d1;
+}
+
+/* 🏆 왼쪽 섹션 (부모) */
+.match-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start; /* 전체 왼쪽 정렬 */
+  text-align: left;
+  font-size: 14px;
+  width: 150px;
+  height: 100%; /* 부모 요소가 확장되도록 설정 */
+  min-height: 80px; /* 최소 높이 추가 */
+}
+
+/* 🏆 위쪽 섹션: 게임 모드, 매치 시간 (상단 정렬) */
+.match-left-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* 🏆 아래쪽 섹션: 게임 승패, 플레이 시간 (하단 정렬) */
+.match-left-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+/* 📌 구분선 */
+.match-divider {
+  width: 40%; /* 구분선 더 짧게 조정 */
+  height: 1px;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* 가시성을 높이기 위해 약간 더 진하게 */
+  margin: 2px 0; /* 여백 줄이기 */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* 🏆 승리 / 패배 시 색상 변경 */
+.match-left .win-text {
+  color: blue;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.match-left .lose-text {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.match-time {
+  margin-bottom: 0px;
+}
+
+.match-duration {
+  margin-bottom: 0px;
+}
+
+/* 🏆 중앙 섹션 */
+.match-center {
+  display: flex;
+  flex-direction: column; /* 위아래 정렬 */
+  align-items: flex-start; /* 왼쪽 정렬 */
+  justify-content: center;
+  gap: 10px; /* 요소 간격 */
+  flex: 2;
+}
+
+/* 🏆 위쪽 섹션: 챔피언, 스펠, 룬, KDA */
+.match-center-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 챔피언 아이콘 */
+.champion-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* 스펠 & 룬 */
+.runes-spells {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.spell-icon,
+.rune-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+}
+
+/* KDA 정보 */
+.kda-info {
+  text-align: left; /* 왼쪽 정렬 */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* 왼쪽 정렬 */
+  margin-left: 15px;
+}
+
+.kda {
+  font-size: 27px;
+  font-weight: 900;
+  margin-bottom: 0px;
+}
+
+.rating {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 0px;
+}
+
+/* 🏆 아래쪽 섹션: 아이템 */
+.match-center-bottom {
+  display: flex;
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  gap: 5px;
+}
+
+.item-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+/* 🏆 오른쪽 섹션: 아군 & 적군 */
+.match-right {
+  display: flex;
+  flex-direction: row;
+  width: 250px;
+  justify-content: space-between;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.small-champion-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 20%;
+}
+
+.player-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.player-name {
+  display: flex;
+  align-items: center; /* 텍스트도 수직 중앙 정렬 */
+  line-height: 1; /* 줄 간격 조정 (텍스트 높이를 낮춰서 정렬 보정) */
+  margin-bottom: 0px;
+}
+
+.player-name {
+  font-size: 12px;
+  color: rgb(0, 0, 0);
 }

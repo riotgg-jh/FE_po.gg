@@ -1,26 +1,26 @@
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
-import "./../styles/find_duo.css";
-import WriteModal from "./../components/WriteModal.js"; // ✅ WriteModal import
+import React, { useState } from "react"
+import ReactDOM from "react-dom"
+import "./../styles/find_duo.css"
+import WriteModal from "./../components/WriteModal.js" // ✅ WriteModal import
 
-import anything_icon from "./../assets/position/anything.png";
-import top_icon from "./../assets/position/Top_icon.png";
-import mid_icon from "./../assets/position/Middle_icon.png";
-import jungle_icon from "./../assets/position/Jungle_icon.png";
-import bottom_icon from "./../assets/position/Bottom_icon.png";
-import support_icon from "./../assets/position/Support_icon.png";
+import anything_icon from "./../assets/position/anything.png"
+import top_icon from "./../assets/position/Top_icon.png"
+import mid_icon from "./../assets/position/Middle_icon.png"
+import jungle_icon from "./../assets/position/Jungle_icon.png"
+import bottom_icon from "./../assets/position/Bottom_icon.png"
+import support_icon from "./../assets/position/Support_icon.png"
 
-import reloadIcon from "./../assets/icons/reload.png";
+import reloadIcon from "./../assets/icons/reload.png"
 
 function FindDuo() {
-  const [visibleCards, setVisibleCards] = useState(12);
-  const [totalCards, setTotalCards] = useState(18);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [visibleCards, setVisibleCards] = useState(12)
+  const [totalCards, setTotalCards] = useState(18)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const handleSeeMore = () => {
-    setVisibleCards((prev) => prev + 12);
-    setTotalCards((prev) => prev + 12);
-  };
+    setVisibleCards((prev) => prev + 12)
+    setTotalCards((prev) => prev + 12)
+  }
 
   const positionImages = [
     anything_icon,
@@ -29,7 +29,7 @@ function FindDuo() {
     jungle_icon,
     bottom_icon,
     support_icon,
-  ];
+  ]
 
   return (
     <div className="findduo-container">
@@ -69,7 +69,7 @@ function FindDuo() {
             </select>
           </div>
 
-          {/* ✅ 포지션 아이콘 선택 복구 */}
+          {/* 포지션 아이콘 선택 복구 */}
           <div className="filter-icons">
             {positionImages.map((image, index) => (
               <button key={index} className="icon-btn">
@@ -98,14 +98,18 @@ function FindDuo() {
         <p className="see-more-text">더보기</p>
       </div>
 
-      {/* ✅ 팝업을 React Portal로 유지 */}
+      {/* 팝업을 React Portal로 유지 */}
       {isModalOpen &&
         ReactDOM.createPortal(
-          <WriteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} positionImages={positionImages} />,
+          <WriteModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            positionImages={positionImages}
+          />,
           document.body
         )}
     </div>
-  );
+  )
 }
 
-export default FindDuo;
+export default FindDuo
