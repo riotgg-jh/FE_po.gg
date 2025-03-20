@@ -240,25 +240,16 @@
 /* 🏆 중앙 섹션 */
 .match-center {
   display: flex;
-  flex-direction: column; /* 위아래 정렬 */
-  align-items: flex-start; /* 왼쪽 정렬 */
-  justify-content: center;
-  gap: 10px; /* 요소 간격 */
-  flex: 2;
-}
-
-/* 🏆 위쪽 섹션: 챔피언, 스펠, 룬, KDA */
-.match-center-top {
-  display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
+  flex: 2;
 }
 
 /* 챔피언 아이콘 */
 .champion-icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  border-radius: 20%;
   margin-right: 10px;
 }
 
@@ -271,24 +262,25 @@
 
 .spell-icon,
 .rune-icon {
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   border-radius: 5px;
 }
 
 /* KDA 정보 */
 .kda-info {
-  text-align: left; /* 왼쪽 정렬 */
+  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* 왼쪽 정렬 */
-  margin-left: 15px;
+  align-items: flex-start;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 .kda {
-  font-size: 27px;
+  font-size: 30px;
   font-weight: 900;
-  margin-bottom: 0px;
+  margin-bottom: 2px;
 }
 
 .rating {
@@ -297,16 +289,17 @@
   margin-bottom: 0px;
 }
 
-/* 🏆 아래쪽 섹션: 아이템 */
-.match-center-bottom {
+/* 🏆 아이템 리스트를 KDA 오른쪽에 배치 */
+.match-items {
   display: flex;
-  justify-content: flex-start; /* 왼쪽 정렬 */
+  flex-wrap: wrap; /* 2줄로 정렬 */
   gap: 5px;
+  max-width: 150px; /* 아이템 박스 크기 조정 */
 }
 
 .item-icon {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   border-radius: 5px;
 }
 
