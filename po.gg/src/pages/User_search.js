@@ -21,7 +21,7 @@ const dummyUser = {
   },
   //매치 더미데이터
   matches: [
-    // ✅ 기존 승리한 매치
+    // 기존 승리한 매치
     {
       gameType: "자유 랭크 게임",
       matchTime: "6일 전",
@@ -45,7 +45,7 @@ const dummyUser = {
       ],
       allies: [
         {
-          summonerName: "나는강보성이다",
+          summonerName: "나는강보성이다다다다다다",
           championIcon: "/assets/champion/udyr.png",
         },
         {
@@ -64,7 +64,7 @@ const dummyUser = {
       ],
       enemies: [
         {
-          summonerName: "연애하기",
+          summonerName: "연애하기기기기기기기",
           championIcon: "/assets/champion/ani.png",
         },
         {

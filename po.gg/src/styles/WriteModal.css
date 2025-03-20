@@ -1,4 +1,4 @@
-/* ✅ 팝업이 화면 중앙에 뜨도록 설정 */
+/* 팝업이 화면 중앙에 뜨도록 설정 */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -12,7 +12,7 @@
   z-index: 1000;
 }
 
-/* ✅ 모달 컨테이너 */
+/* 모달 컨테이너 */
 .modal-container {
   background: #222;
   width: 500px;
@@ -60,13 +60,13 @@
   border-bottom: 2px solid #ff6600;
 }
 
-/* ✅ 모달 내부 정렬 */
+/* 모달 내부 정렬 */
 .modal-body {
   display: flex;
   gap: 20px;
 }
 
-/* ✅ 게임 모드 선택 (왼쪽) */
+/* 게임 모드 선택 (왼쪽) */
 .modal-sidebar {
   width: 120px;
   display: flex;
@@ -88,7 +88,7 @@
   font-weight: bold;
 }
 
-/* ✅ 입력창 (오른쪽) */
+/* 입력창 (오른쪽) */
 .modal-main {
   flex-grow: 1;
   display: flex;
@@ -97,7 +97,7 @@
   padding-left: 15px;
 }
 
-/* ✅ 소환사명 입력란 */
+/* 소환사명 입력란 */
 .input-field {
   width: 100%;
   padding: 10px;
@@ -106,9 +106,24 @@
   font-size: 16px;
   background-color: #333;
   color: white;
+  margin-bottom: 10px;
 }
 
-/* ✅ 포지션 선택 박스 */
+/* 포지션 선택 컨테이너 */
+.position-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 포지션 선택 타이틀 */
+.position-title {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* 포지션 선택 박스 */
 .position-box {
   display: flex;
   background: #333;
@@ -116,10 +131,15 @@
   padding: 10px;
   gap: 8px;
   justify-content: space-around;
-  border: 1px solid #555; /* ✅ 테두리 추가 */
+  border: 1px solid #555;
 }
 
-/* ✅ 포지션 아이콘 버튼 */
+.position-title {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+/* 포지션 아이콘 버튼 */
 .position-btn {
   width: 40px;
   height: 40px;
@@ -129,27 +149,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid #555; /* ✅ 각 아이콘 간 구분선 */
+  border-right: 1px solid #555;
 }
 
-/* ✅ 마지막 아이콘은 우측 선 제거 */
+/* 마지막 아이콘은 우측 선 제거 */
 .position-btn:last-child {
   border-right: none;
 }
 
-/* ✅ 포지션 아이콘 크기 조정 */
+/* 포지션 아이콘 크기 조정 */
 .position-btn img {
   width: 30px;
   height: 30px;
 }
 
-/* ✅ 선택된 포지션 하이라이트 */
+/* 선택된 포지션 하이라이트 */
 .position-btn.selected {
-  background-color: rgba(255, 255, 255, 0.2); /* ✅ 밝게 하이라이트 */
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
 }
 
-/* ✅ 내용 입력란 크기 키우기 */
+/* 내용 입력란 */
 .description-field {
   width: 100%;
   height: 120px;
@@ -159,9 +179,10 @@
   font-size: 14px;
   background-color: #333;
   color: white;
+  margin-top: 15px;
 }
 
-/* ✅ 등록 버튼 */
+/* 등록 버튼 */
 .submit-btn {
   width: 100%;
   padding: 12px;
