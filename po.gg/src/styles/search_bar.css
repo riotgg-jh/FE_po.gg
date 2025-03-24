@@ -1,4 +1,4 @@
-/* 🔎 검색 바 전체 컨테이너 */
+/* 검색 바 전체 컨테이너 */
 .search-bar {
   display: flex;
   align-items: center;
@@ -11,7 +11,7 @@
   margin: 45px auto 0;
 }
 
-/* 🌍 지역 선택 드롭다운 */
+/* 지역 선택 드롭다운 */
 .region-select {
   border: none;
   background: transparent;
@@ -21,7 +21,7 @@
   cursor: pointer;
 }
 
-/* ✏️ 소환사명 입력 필드 */
+/* 소환사명 입력 필드 */
 .summoner-input {
   flex: 1;
   border: none;
@@ -30,11 +30,34 @@
   color: #333;
 }
 
-/* 🔍 검색 버튼 */
+/* 태그 섹션 */
+.tag-input {
+  width: 140px;
+  padding: 8px;
+  margin-left: 5px;
+  border: 1px solid #9e9e9e;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 14px;
+  margin-right: 20px;
+}
+
+/* 검색 버튼 */
 .search-button {
   background: none;
   border: none;
   cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.tag-input {
+  padding: 10px 10px;
+}
+
+.search-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .search-button img {

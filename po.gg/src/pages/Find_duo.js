@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import ReactDOM from "react-dom"
 import "./../styles/find_duo.css"
-import WriteModal from "./../components/WriteModal.js" // ✅ WriteModal import
+import WriteModal from "./../components/WriteModal.js"
 
 import anything_icon from "./../assets/position/anything.png"
 import top_icon from "./../assets/position/Top_icon.png"
@@ -98,7 +98,6 @@ function FindDuo() {
         <p className="see-more-text">더보기</p>
       </div>
 
-      {/* 팝업을 React Portal로 유지 */}
       {isModalOpen &&
         ReactDOM.createPortal(
           <WriteModal

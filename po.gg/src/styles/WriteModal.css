@@ -109,6 +109,23 @@
   margin-bottom: 10px;
 }
 
+/* 태그 입력란 */
+.summoner-tag-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.tag-field {
+  width: 80px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  background-color: #333;
+  color: white;
+}
+
 /* 포지션 선택 컨테이너 */
 .position-container {
   display: flex;

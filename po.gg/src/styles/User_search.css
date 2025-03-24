@@ -237,7 +237,7 @@
   margin-bottom: 0px;
 }
 
-/* 🏆 중앙 섹션 */
+/* 중앙 섹션 */
 .match-center {
   display: flex;
   align-items: center;
@@ -289,7 +289,7 @@
   margin-bottom: 0px;
 }
 
-/* 🏆 아이템 리스트를 KDA 오른쪽에 배치 */
+/* 아이템 리스트를 KDA 오른쪽에 배치 */
 .match-items {
   display: flex;
   flex-wrap: wrap; /* 2줄로 정렬 */
@@ -303,7 +303,7 @@
   border-radius: 5px;
 }
 
-/* 🏆 오른쪽 섹션: 아군 & 적군 */
+/* 오른쪽 섹션: 아군 & 적군 */
 .match-right {
   display: flex;
   flex-direction: row;
@@ -331,8 +331,8 @@
 
 .player-name {
   display: flex;
-  align-items: center; /* 텍스트도 수직 중앙 정렬 */
-  line-height: 1; /* 줄 간격 조정 (텍스트 높이를 낮춰서 정렬 보정) */
+  align-items: center; 
+  line-height: 1; 
   margin-bottom: 0px;
 }
 

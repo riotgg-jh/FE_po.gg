@@ -3,12 +3,12 @@ body {
 }
 
 .navbar.custom-navbar {
-  background-color: #f29c50; /* 배경색 */
-  padding: 15px 20px; /* 상하 패딩 */
+  background-color: #f29c50; 
+  padding: 15px 20px; 
 }
 
 .navbar.custom-navbar .nav-link {
-  font-size: 19px; /* 글씨 크기 */
+  font-size: 19px; 
   font-weight: bold;
-  color: #000000; /* 기본 글자 색상 */
+  color: #000000; 
 }

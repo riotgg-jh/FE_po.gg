@@ -21,7 +21,6 @@ const dummyUser = {
   },
   //매치 더미데이터
   matches: [
-    // 기존 승리한 매치
     {
       gameType: "자유 랭크 게임",
       matchTime: "6일 전",
@@ -85,7 +84,7 @@ const dummyUser = {
         },
       ],
     },
-    // ✅ 기존 패배한 매치
+
     {
       gameType: "솔로 랭크 게임",
       matchTime: "2일 전",
@@ -137,7 +136,6 @@ const dummyUser = {
         },
       ],
     },
-    // ✅ 추가 매치 1 (승리)
     {
       gameType: "자유 랭크 게임",
       matchTime: "1일 전",
@@ -189,7 +187,6 @@ const dummyUser = {
         },
       ],
     },
-    // ✅ 추가 매치 2 (패배)
     {
       gameType: "솔로 랭크 게임",
       matchTime: "3시간 전",
@@ -241,7 +238,6 @@ const dummyUser = {
         },
       ],
     },
-    // ✅ 추가 매치 3 (승리)
     {
       gameType: "솔로 랭크 게임",
       matchTime: "2시간 전",
@@ -303,13 +299,13 @@ const UserSearch = () => {
 
   return (
     <div className="user-search-container">
-      {/* 🔎 검색 바 (정상적으로 위치 확인) */}
+      {/*검색 바*/}
       <SearchBar onSearch={handleSearch} />
 
-      {/* 🏆 유저 프로필 + 랭크 정보 */}
+      {/*유저 프로필 + 랭크 정보*/}
       <UserProfile user={dummyUser} />
 
-      {/* 📜 매치 기록 */}
+      {/*매치 기록*/}
       <div className="user-content">
         <MatchHistory matches={dummyUser.matches} />
       </div>
