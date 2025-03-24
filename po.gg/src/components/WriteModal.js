@@ -5,8 +5,10 @@ import "./../styles/WriteModal.css"
 function WriteModal({ isOpen, onClose, positionImages = [] }) {
   const [activeTab, setActiveTab] = useState("member")
   const [selectedMode, setSelectedMode] = useState("솔로랭크")
-  const [selectedPosition, setSelectedPosition] = useState(null) // 찾고 있는 포지션
-  const [myPosition, setMyPosition] = useState(null) // 나의 포지션
+  const [selectedPosition, setSelectedPosition] = useState(null)
+  const [myPosition, setMyPosition] = useState(null)
+  const [tagLine, setTagLine] = useState("")
+  const [summonerName, setSummonerName] = useState("")
 
   if (!isOpen) return null
 
@@ -17,7 +19,6 @@ function WriteModal({ isOpen, onClose, positionImages = [] }) {
           ✖
         </button>
 
-        {/* 탭 선택 */}
         <div className="modal-tabs">
           <button
             className={`tab-button ${activeTab === "member" ? "active" : ""}`}
@@ -34,7 +35,6 @@ function WriteModal({ isOpen, onClose, positionImages = [] }) {
         </div>
 
         <div className="modal-body">
-          {/* 왼쪽: 게임 모드 선택 */}
           <div className="modal-sidebar">
             {["솔로랭크", "자유랭크", "일반", "칼바람"].map((mode) => (
               <button
@@ -49,15 +49,25 @@ function WriteModal({ isOpen, onClose, positionImages = [] }) {
             ))}
           </div>
 
-          {/* 오른쪽: 입력 및 선택 필드 */}
           <div className="modal-main">
-            <input
-              type="text"
-              className="input-field"
-              placeholder="소환사명 입력"
-            />
+            <div className="summoner-tag-wrapper">
+              <input
+                type="text"
+                className="input-field"
+                placeholder="소환사명 입력"
+                value={summonerName}
+                onChange={(e) => setSummonerName(e.target.value)}
+              />
+              <input
+                type="text"
+                className="tag-field"
+                placeholder="#TAG"
+                maxLength={5}
+                value={tagLine}
+                onChange={(e) => setTagLine(e.target.value)}
+              />
+            </div>
 
-            {/* ✅ "나의 포지션" 선택 */}
             <div className="position-selector">
               <p className="position-title">나의 포지션</p>
               <div className="position-box">
@@ -75,7 +85,6 @@ function WriteModal({ isOpen, onClose, positionImages = [] }) {
               </div>
             </div>
 
-            {/* ✅ "찾고 있는 포지션" 선택 */}
             <div className="position-selector">
               <p className="position-title">
                 {activeTab === "member"
@@ -102,6 +111,7 @@ function WriteModal({ isOpen, onClose, positionImages = [] }) {
               placeholder="내용 입력 (80자 이내)"
               maxLength={80}
             ></textarea>
+
             <button className="submit-btn">등록하기</button>
           </div>
         </div>
