@@ -1,5 +1,5 @@
-import React from "react"
-import "../../styles/user_search.css"
+import React from "react";
+import "../../styles/user_search.css";
 
 const MatchCard = ({ match }) => {
   return (
@@ -21,30 +21,63 @@ const MatchCard = ({ match }) => {
         </div>
       </div>
 
-      {/* 중앙 섹션 (한 줄로 정리) */}
+      {/* 중앙 섹션 */}
       <div className="match-center">
         <img src={match.championIcon} alt="챔피언" className="champion-icon" />
+
+        {/* 소환사 주문 */}
         <div className="runes-spells">
           <img src={match.spells[0]} alt="스펠1" className="spell-icon" />
           <img src={match.spells[1]} alt="스펠2" className="spell-icon" />
         </div>
+
+        {/* 룬 */}
         <div className="runes-spells">
-          <img src={match.runes[0]} alt="룬1" className="rune-icon" />
-          <img src={match.runes[1]} alt="룬2" className="rune-icon" />
+          {match.runes?.primaryRuneIcon && (
+            <img
+              src={match.runes.primaryRuneIcon}
+              alt={match.runes.primaryRuneKey}
+              className="rune-icon"
+            />
+          )}
+          {match.runes?.subRuneTreeIcon && (
+            <img
+              src={match.runes.subRuneTreeIcon}
+              alt={match.runes.subRuneTreeName}
+              className="rune-icon"
+            />
+          )}
         </div>
+
+        {/* KDA */}
         <div className="kda-info">
           <p className="kda">{match.kda}</p>
           <p className="rating">{match.rating}</p>
         </div>
-        {/* 아이템 리스트를 KDA 오른쪽에 배치 */}
-        <div className="match-items">
-          {match.items.map((item, idx) => (
-            <img key={idx} src={item} alt="아이템" className="item-icon" />
-          ))}
+
+        {/* 아이템 (6칸) + 장신구 (오른쪽 별도) */}
+        <div className="items-container">
+          <div className="main-items">
+            {match.mainItems.map((itemUrl, idx) => (
+              itemUrl ? (
+                <img key={idx} src={itemUrl} alt={`아이템${idx}`} className="item-icon" />
+              ) : (
+                <div key={idx} className="item-icon placeholder" />
+              )
+            ))}
+          </div>
+          {/* 장신구 (trinket) */}
+          <div className="trinket-slot">
+            {match.trinket ? (
+              <img src={match.trinket} alt="장신구" className="trinket-icon" />
+            ) : (
+              <div className="trinket-icon placeholder" />
+            )}
+          </div>
         </div>
       </div>
 
-      {/* 오른쪽 섹션 */}
+      {/* 오른쪽 섹션 (팀원 정보) */}
       <div className="match-right">
         <div className="team allies">
           {match.allies.map((player, idx) => (
@@ -64,7 +97,7 @@ const MatchCard = ({ match }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default MatchCard
+export default MatchCard;
