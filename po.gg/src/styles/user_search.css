@@ -1,4 +1,4 @@
-/* 📌 전체 컨테이너 */
+/* 전체 컨테이너 */
 .user-search-container {
   display: flex;
   flex-direction: column;
@@ -7,16 +7,16 @@
   max-width: none;
 }
 
-/* 🔍 검색 바 컨테이너 */
+/* 검색 바 컨테이너 */
 .search-bar-container {
   width: 100%;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  margin-top: 20px; /* 🔼 위쪽 여유 공간 추가 */
+  margin-top: 20px;
 }
 
-/* 🏆 프로필 전체 컨테이너 */
+/* 프로필 전체 컨테이너 */
 .user-profile {
   display: flex;
   justify-content: space-between;
@@ -67,7 +67,7 @@
   font-size: 16px;
 }
 
-/* 🏅 오른쪽 랭크 정보 */
+/* 오른쪽 랭크 정보 */
 .profile-rank {
   display: flex;
   flex-direction: column;
@@ -79,19 +79,22 @@
   border-radius: 8px;
 }
 
-/* 🏆 큐 타입 선택 버튼 */
+/* 큐 타입 선택 버튼 */
 .queue-select {
   display: flex;
-  gap: 30px;
+  width: 100%;
 }
 
 .queue-btn {
+  flex: 1;
+  text-align: center;
   background: none;
   border: none;
   color: #888;
   font-weight: bold;
   font-size: 14px;
   cursor: pointer;
+  padding: 10px 0;
 }
 
 .queue-btn.active {
@@ -99,7 +102,7 @@
   border-bottom: 2px solid #f0c040;
 }
 
-/* 🏅 랭크 상세 정보 */
+/* 랭크 상세 정보 */
 .rank-details {
   display: flex;
   align-items: center;
@@ -108,7 +111,7 @@
   gap: 15px;
 }
 
-/* 🏆 티어 아이콘 */
+/* 티어 아이콘 */
 .rank-icon {
   width: 120px;
   height: 120px;
@@ -116,7 +119,7 @@
   margin: auto;
 }
 
-/* 🏅 랭크 정보 */
+/* 랭크 정보 */
 .rank-info {
   display: flex;
   flex-direction: column;
@@ -160,19 +163,19 @@
 .match-card {
   display: flex;
   align-items: center;
-  gap: 10px; /* 카드 내부 전체 간격 */
+  gap: 10px;
   padding: 10px;
   border-radius: 8px;
   width: 100%;
   max-width: none;
-  background-color: #d1e7ff; /* 기본 승리 색 */
+  background-color: #d1e7ff;
 }
 
 .match-card.lose {
   background-color: #ffd1d1;
 }
 
-/* 🏆 왼쪽 섹션 (부모) */
+/* 왼쪽 섹션  */
 .match-left {
   display: flex;
   flex-direction: column;
@@ -180,7 +183,7 @@
   align-items: flex-start;
   text-align: left;
   font-size: 14px;
-  width: auto; /* 고정 너비 제거 */
+  width: auto;
   min-width: 80px;
   height: 100%;
   min-height: 80px;
@@ -200,7 +203,7 @@
   justify-content: flex-end;
 }
 
-/* 📌 구분선 */
+/* 구분선 */
 .match-divider {
   width: 40%;
   height: 1px;
@@ -208,7 +211,7 @@
   margin: 20px 0;
 }
 
-/* 🏆 승리 / 패배 시 색상 변경 */
+/* 승리 / 패배 시 색상 변경 */
 .match-left .win-text {
   color: blue;
   font-weight: bold;
@@ -234,7 +237,6 @@
   display: flex;
   align-items: center;
   gap: 15px;
-  /* 💡 이 부분은 그대로 유지 (flex) */
 }
 
 /* 챔피언 아이콘 */
@@ -259,7 +261,7 @@
   border-radius: 5px;
 }
 
-/* KDA 정보 */
+/* KDA  */
 .kda-info {
   text-align: left;
   display: flex;
@@ -268,10 +270,9 @@
   margin-left: 20px;
   margin-right: 0;
   font-weight: bold;
-  /* ✅ 고정 너비로 아이템 밀림 방지 */
-  width: 200px;  /* 원하는 너비로 설정 */
-  flex-shrink: 0; 
-  white-space: nowrap; /* KDA가 너무 길 경우 줄바꿈 방지 */
+  width: 200px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .kda {
@@ -286,9 +287,8 @@
   margin-bottom: 0px;
 }
 
-/* ------------------ 아이템 (6칸) + 장신구(트링켓) ------------------ */
+/* ------------------ 아이템+ 장신구 ------------------ */
 .items-container {
-  /* ✅ KDA 오른쪽에 고정하기 위해 margin-left: auto; */
   margin-left: auto;
   display: flex;
   align-items: center;
@@ -323,38 +323,41 @@
   opacity: 0.3;
 }
 
-/* 오른쪽 섹션: 아군 & 적군 */
+/* -------------------- 오른쪽 섹션: 아군 & 적군 -------------------- */
 .match-right {
-  margin-left: auto; 
+  margin-left: auto;
   display: flex;
-  flex-direction: row;
-  width: 250px;
-  justify-content: space-between;
+  gap: 40px;
 }
 
 .team {
+  width: 120px;
   display: flex;
   flex-direction: column;
   gap: 4px;
-}
-
-.small-champion-icon {
-  width: 22px;
-  height: 22px;
-  border-radius: 20%;
 }
 
 .player-info {
   display: flex;
   align-items: center;
   gap: 5px;
+  width: 120px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.small-champion-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 20%;
+  flex-shrink: 0;
 }
 
 .player-name {
-  display: flex;
-  align-items: center;
-  line-height: 1;
-  margin-bottom: 0px;
+  flex: 1;
   font-size: 12px;
   color: rgb(0, 0, 0);
+  margin-bottom: 0;
 }
