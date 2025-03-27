@@ -23,9 +23,10 @@ const MatchCard = ({ match }) => {
 
       {/* 중앙 섹션 */}
       <div className="match-center">
+        {/* 챔피언 아이콘 */}
         <img src={match.championIcon} alt="챔피언" className="champion-icon" />
 
-        {/* 소환사 주문 */}
+        {/* 스펠 */}
         <div className="runes-spells">
           <img src={match.spells[0]} alt="스펠1" className="spell-icon" />
           <img src={match.spells[1]} alt="스펠2" className="spell-icon" />
@@ -55,18 +56,22 @@ const MatchCard = ({ match }) => {
           <p className="rating">{match.rating}</p>
         </div>
 
-        {/* 아이템 (6칸) + 장신구 (오른쪽 별도) */}
+        {/* 아이템 */}
         <div className="items-container">
           <div className="main-items">
-            {match.mainItems.map((itemUrl, idx) => (
+            {match.mainItems.map((itemUrl, idx) =>
               itemUrl ? (
-                <img key={idx} src={itemUrl} alt={`아이템${idx}`} className="item-icon" />
+                <img
+                  key={idx}
+                  src={itemUrl}
+                  alt={`아이템 ${idx}`}
+                  className="item-icon"
+                />
               ) : (
                 <div key={idx} className="item-icon placeholder" />
               )
-            ))}
+            )}
           </div>
-          {/* 장신구 (trinket) */}
           <div className="trinket-slot">
             {match.trinket ? (
               <img src={match.trinket} alt="장신구" className="trinket-icon" />
@@ -77,12 +82,16 @@ const MatchCard = ({ match }) => {
         </div>
       </div>
 
-      {/* 오른쪽 섹션 (팀원 정보) */}
+      {/* 팀원 정보 */}
       <div className="match-right">
         <div className="team allies">
           {match.allies.map((player, idx) => (
             <div key={idx} className="player-info">
-              <img src={player.championIcon} alt="아군 챔피언" className="small-champion-icon" />
+              <img
+                src={player.championIcon}
+                alt="아군 챔피언"
+                className="small-champion-icon"
+              />
               <p className="player-name">{player.summonerName}</p>
             </div>
           ))}
@@ -90,7 +99,11 @@ const MatchCard = ({ match }) => {
         <div className="team enemies">
           {match.enemies.map((player, idx) => (
             <div key={idx} className="player-info">
-              <img src={player.championIcon} alt="적 챔피언" className="small-champion-icon" />
+              <img
+                src={player.championIcon}
+                alt="적 챔피언"
+                className="small-champion-icon"
+              />
               <p className="player-name">{player.summonerName}</p>
             </div>
           ))}
