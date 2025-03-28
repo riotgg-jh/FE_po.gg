@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom"
-import Container from "react-bootstrap/Container"
-import Nav from "react-bootstrap/Nav"
-import Navbar from "react-bootstrap/Navbar"
-import NavDropdown from "react-bootstrap/NavDropdown"
-import "../../styles/Header.css"
+import { Link } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import "../../styles/Header.css";
 
 function Header() {
   return (
@@ -18,17 +17,11 @@ function Header() {
             <Nav.Link as={Link} to="/find_duo">
               듀오찾기
             </Nav.Link>
-            <Nav.Link as={Link} to="/user_search">
-              유저조회
-            </Nav.Link>
-            <Nav.Link as={Link} to="/user_search">
-              커뮤니티
-            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  )
+  );
 }
 
-export default Header
+export default Header;
