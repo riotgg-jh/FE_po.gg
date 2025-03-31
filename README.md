@@ -167,6 +167,7 @@ https://youtu.be/Az15Lqwllvo
 
 ### 💡 회고
 - 강보성
+https://www.notion.so/PO-GG-1c7dc55c75be8076b278efcd99a22b95?pvs=4
 
 - 이혜린
 
